@@ -18,43 +18,6 @@ col_names = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration"
              "curb-weight", "engine-type", "num-of-cylinders", "engine-size", "fuel-system", "bore", "stroke", "compression-ratio", "horsepower", "peak-rpm", "city-mpg", "highway-mpg", "price"]
 df = pd.read_csv("./data_set.data", names=col_names, na_values=['?'])
 
-""" 
-df.info(verbose=True)
-output:
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 204 entries, 0 to 203
-Data columns (total 26 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   symboling          204 non-null    int64  
- 1   normalized-losses  163 non-null    float64
- 2   make               204 non-null    object 
- 3   fuel-type          204 non-null    object 
- 4   aspiration         204 non-null    object 
- 5   num-of-doors       202 non-null    object 
- 6   body-style         204 non-null    object 
- 7   drive-wheels       204 non-null    object 
- 8   engine-location    204 non-null    object 
- 9   wheel-base         204 non-null    float64
- 10  length             204 non-null    float64
- 11  width              204 non-null    float64
- 12  height             204 non-null    float64
- 13  curb-weight        204 non-null    int64  
- 14  engine-type        204 non-null    object 
- 15  num-of-cylinders   204 non-null    object 
- 16  engine-size        204 non-null    int64  
- 17  fuel-system        204 non-null    object 
- 18  bore               200 non-null    float64
- 19  stroke             200 non-null    float64
- 20  compression-ratio  204 non-null    float64
- 21  horsepower         202 non-null    float64
- 22  peak-rpm           202 non-null    float64
- 23  city-mpg           204 non-null    int64  
- 24  highway-mpg        204 non-null    int64  
- 25  price              200 non-null    float64
-dtypes: float64(11), int64(5), object(10)
-memory usage: 41.6+ KB 
-
 
 # get dummies for every column with type object
 d_make = pd.get_dummies(df['make'])
